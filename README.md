@@ -62,3 +62,4 @@ CPU 스케줄링과 메모리 관리 전략을 분석하며 **시스템 리소�
 * **Key Insight:**
     * **Backend View:** 다수의 클라이언트 요청을 동시에 처리하는 백엔드 서버의 기본 원리를 체득하고, <b>스레드 안전(Thread-safe)</b>한 코드 작성의 중요성을 경험함.
 * **[📂 소스 코드 및 보고서 보기](./Network-Programming/Multi-Thread-Chat/)**
+* **[📷 시연 영상 보기](https://drive.google.com/file/d/17bwa8vEyuImeIk43u6zeR8jTpghrAkyO/view)**
