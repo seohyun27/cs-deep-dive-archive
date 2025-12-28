@@ -10,7 +10,16 @@
 * **Key Feature:** Multi-threading, Synchronization (Mutex), Private Message Parsing
 
 ## 📷 Preview
-*서버와 다수의 클라이언트(터미널)가 연결되어 1:1 귓속말을 주고받는 실행 화면입니다.*
+*서버와 다수의 클라이언트(터미널)가 연결되어 채팅을 주고받는 실행 화면입니다.*
+
+### 일반 채팅
+<img width="855" height="503" alt="image" src="https://github.com/user-attachments/assets/14d63f64-b0e6-46d7-8bba-7e449cb8987d" />
+
+### 1:1 귓속말
+<img width="841" height="492" alt="image" src="https://github.com/user-attachments/assets/575caa41-6d2f-4867-a398-661b56a7108c" />
+
+### 전체 메시지
+<img width="839" height="490" alt="image" src="https://github.com/user-attachments/assets/4f9e85f4-eb56-4ccf-8d72-773d47762e60" />
 
 ## ⚙️ Implementation Details
 ### 1. 1:1 귓속말 기능 (Whisper)
