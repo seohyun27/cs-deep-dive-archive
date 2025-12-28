@@ -26,7 +26,7 @@ CPU 스케줄링과 메모리 관리 전략을 분석하며 **시스템 리소�
     * **Backend View:** DB의 **Buffer Pool 관리**나 Redis와 같은 **캐시(Cache) 시스템의 만료 정책(Eviction Policy)**을 설계할 때, 데이터 접근 패턴(Access Pattern)을 고려해야 함을 체득.
 * **[📂 소스 코드 및 보고서 보기](./Operating-System/02_Page_Replacement_PFU_Proposal/)**
 
-* <br>
+<br>
 
 ## 📂 2. Computer Architecture (컴퓨터 구조)
 하드웨어의 구조적 특징과 병목 현상을 이해하여 **소프트웨어 최적화**의 하드웨어적 근거를 마련했습니다.
@@ -60,5 +60,5 @@ CPU 스케줄링과 메모리 관리 전략을 분석하며 **시스템 리소�
     * **Concurrency Control:** `clnt_names`(사용자 목록) 등 전역 변수에 여러 스레드가 동시에 접근할 때 발생하는 Race Condition을 방지하기 위해 **Mutex를 활용한 임계 영역(Critical Section) 보호** 적용.
     * **Non-blocking I/O:** 클라이언트에서 읽기 스레드와 쓰기 스레드를 분리하여, 메시지를 입력하는 도중에도 수신된 메시지를 즉시 출력할 수 있도록 개선.
 * **Key Insight:**
-    * **Backend View:** 다수의 클라이언트 요청을 동시에 처리하는 백엔드 서버의 기본 원리를 체득하고, **스레드 안전(Thread-safe)**한 코드 작성의 중요성을 경험함.
+    * **Backend View:** 다수의 클라이언트 요청을 동시에 처리하는 백엔드 서버의 기본 원리를 체득하고, <b>스레드 안전(Thread-safe)</b>한 코드 작성의 중요성을 경험함.
 * **[📂 소스 코드 및 보고서 보기](./Network-Programming/Multi-Thread-Chat/)**
