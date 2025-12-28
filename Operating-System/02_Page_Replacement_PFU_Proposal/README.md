@@ -10,7 +10,34 @@
 * **Policies:** FIFO, LFU, MFU, **PFU (Custom)**
 
 ## 📷 Preview
-*실제 시뮬레이터의 실행 화면입니다.*
+*동일한 조건(문자열: ABBBCDEFB, 프레임: 4)에서 정책별 실행 결과 비교입니다.*
+
+<table border="0">
+  <tr>
+    <td align="center" width="50%">
+      <img width="100%" src="https://github.com/user-attachments/assets/63a87d11-2568-47a4-b899-22115237c67f" alt="FIFO 결과"/>
+      <br>
+      <b>① FIFO Policy</b>
+    </td>
+    <td align="center" width="50%">
+      <img width="100%" src="https://github.com/user-attachments/assets/ceb06bce-6c92-49ea-b8f8-4573054243d4" alt="LFU 결과"/>
+      <br>
+      <b>② LFU Policy</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img width="100%" src="https://github.com/user-attachments/assets/eba70205-ce12-43db-8705-4dd7d49dc5a9" alt="MFU 결과"/>
+      <br>
+      <b>③ MFU Policy</b>
+    </td>
+    <td align="center" width="50%">
+      <img width="100%" src="https://github.com/user-attachments/assets/9d56d5c8-e5a2-4afa-bfa4-0a7e742dece0" alt="PFU 결과"/>
+      <br>
+      <b>④ PFU Policy (Custom)</b>
+    </td>
+  </tr>
+</table>
 
 ## 📂 Project Structure
 객체 지향 원리(OOP)에 따라 역할을 분리하여 구현했습니다.
