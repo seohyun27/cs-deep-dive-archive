@@ -1,6 +1,8 @@
 # 💬 Multi-Thread Chat Server with Private Messaging
 > **C언어와 Socket Programming을 활용한 멀티 스레드 기반의 1:1 귓속말 채팅 프로그램**
 
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-Watch%20Demo%20Video-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/17bwa8vEyuImeIk43u6zeR8jTpghrAkyO/view?usp=drive_link)
+
 ## 📖 Overview
 기본적인 브로드캐스팅(전체 채팅)만 가능했던 채팅 서버 코드를 기반으로, **특정 사용자에게만 메시지를 보내는 1:1 귓속말 기능**을 직접 구현하여 확장한 프로젝트입니다.<br/>
 **POSIX Threads (pthread)**를 사용하여 다수의 클라이언트 요청을 동시에 처리하며, **Mutex**를 통해 임계 영역(Critical Section)을 안전하게 관리합니다.
@@ -12,14 +14,14 @@
 ## 📷 Preview
 *서버와 다수의 클라이언트(터미널)가 연결되어 채팅을 주고받는 실행 화면입니다.*
 
-### 일반 채팅
-<img width="855" height="503" alt="image" src="https://github.com/user-attachments/assets/14d63f64-b0e6-46d7-8bba-7e449cb8987d" />
+### 👥 일반 채팅 (Broadcasting)
+<img width="100%" alt="일반 채팅" src="https://github.com/user-attachments/assets/14d63f64-b0e6-46d7-8bba-7e449cb8987d" />
+ 
+### 🤫 1:1 귓속말 (Whisper)
+<img width="100%" alt="귓속말" src="https://github.com/user-attachments/assets/575caa41-6d2f-4867-a398-661b56a7108c" />
 
-### 1:1 귓속말
-<img width="841" height="492" alt="image" src="https://github.com/user-attachments/assets/575caa41-6d2f-4867-a398-661b56a7108c" />
-
-### 전체 메시지
-<img width="839" height="490" alt="image" src="https://github.com/user-attachments/assets/4f9e85f4-eb56-4ccf-8d72-773d47762e60" />
+### 📢 전체 메시지 (System Message)
+<img width="100%" alt="전체 메시지" src="https://github.com/user-attachments/assets/4f9e85f4-eb56-4ccf-8d72-773d47762e60" />
 
 ## ⚙️ Implementation Details
 ### 1. 1:1 귓속말 기능 (Whisper)
