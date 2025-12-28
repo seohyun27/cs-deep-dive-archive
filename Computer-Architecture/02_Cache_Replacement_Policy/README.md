@@ -57,18 +57,17 @@ switch (cp->policy) {
 `sim-cache`를 사용하여 벤치마크 프로그램을 시뮬레이션합니다. 아래 명령어는 512 Sets, 32B Block, 1-way, LRU 정책을 적용한 예시입니다.
 
 ```bash
-./sim-cache -redir:sim cache.txt -max:inst 1000000000 \
-  -cache:dl1 dl1:512:32:1:l \
-  ../benchmark/gzip/gzip00.peak.ev6 \
+./sim-cache -redir:sim cache.txt -max:inst 1000000000
+  -cache:dl1 dl1:512:32:1:l
+  ../benchmark/gzip/gzip00.peak.ev6
   ../benchmark/gzip/input.combined
-
 ```
 
 ### 2. Simulation Screenshot
 
-<img src="./simulation_run.png" alt="SimpleScalar Execution Screenshot" width="800">
-
 *터미널에서 `sim-cache` 명령어를 실행하고, 초기화 메시지 및 시뮬레이션 결과가 생성되는 화면입니다.*
+
+<img width="599" height="400" alt="image" src="https://github.com/user-attachments/assets/5fafe0bb-0961-4bc2-b3c7-6e35081dad14" />
 
 ## 📊 Key Results (Summary)
 
