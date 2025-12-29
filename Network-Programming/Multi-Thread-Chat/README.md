@@ -4,8 +4,8 @@
 [![Google Drive](https://img.shields.io/badge/Google%20Drive-Watch%20Demo%20Video-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/17bwa8vEyuImeIk43u6zeR8jTpghrAkyO/view?usp=drive_link)
 
 ## 📖 Overview
-기본적인 브로드캐스팅(전체 채팅)만 가능했던 채팅 서버 코드를 기반으로, **특정 사용자에게만 메시지를 보내는 1:1 귓속말 기능**을 직접 구현하여 확장한 프로젝트입니다.<br/>
-**POSIX Threads (pthread)**를 사용하여 다수의 클라이언트 요청을 동시에 처리하며, **Mutex**를 통해 임계 영역(Critical Section)을 안전하게 관리합니다.
+기본적인 브로드캐스팅(전체 채팅)만 가능했던 채팅 서버 코드를 기반으로 **특정 사용자에게만 메시지를 보내는 1:1 귓속말 기능**을 직접 구현하여 확장한 프로젝트입니다.<br/>
+<b>POSIX Threads (pthread)</b>를 사용하여 다수의 클라이언트 요청을 동시에 처리하며 **Mutex**를 통해 임계 영역(Critical Section)을 안전하게 관리합니다.
 
 * **Language:** C
 * **Environment:** Linux (Ubuntu 22.04.4)
