@@ -51,14 +51,14 @@ gcc chat_clnt.c -o chat_clnt -pthread
 포트 번호를 지정하여 서버를 엽니다.
 
 ```bash
-./chat_serv 9190
+./chat_serv 8080
 ```
 
 ### 3. Execute Client
 새로운 터미널을 열어 서버 IP와 포트, 사용할 닉네임을 입력합니다. (로컬 테스트 시 IP: 127.0.0.1)
 
 ```bash
-./chat_clnt 127.0.0.1 9190 [MyName]
+./chat_clnt 127.0.0.1 8080 [MyName]
 ```
 
 ### 4. Usage (Command)
