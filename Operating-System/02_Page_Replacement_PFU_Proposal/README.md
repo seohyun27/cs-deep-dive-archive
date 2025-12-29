@@ -57,4 +57,4 @@
 1. `src` 폴더 내의 **`GUI.java`** 파일을 컴파일 및 실행합니다.
 2. GUI 창이 뜨면 시뮬레이션 할 **참조 문자열(Reference String)**과 **프레임 수**를 설정합니다.
 3. 원하는 정책(FIFO, LFU, MFU, PFU)을 선택하고 **[실행]** 버튼을 누릅니다.
-4. 하단 콘솔 창에서 **Page Fault 횟수**와 **Hit Rate** 결과를 확인합니다.
+4. GUI의 우측 창에서 **Page Hit, Migration, Fault 횟수**와 **Fault Rate** 결과를 확인합니다.
