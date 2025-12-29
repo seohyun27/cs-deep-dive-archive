@@ -2,15 +2,15 @@
 > **SimpleScalar 3.0 시뮬레이터를 개조하여 캐시 교체 정책(MRU)을 직접 구현하고 성능을 분석한 프로젝트**
 
 ## 📖 Overview
-본 프로젝트는 컴퓨터 구조 학습 목적으로 **SimpleScalar 3.0** 시뮬레이터의 소스 코드를 분석하고 수정하여, 기존에 지원하지 않던 **MRU(Most Recently Used)** 페이지 교체 정책을 추가 구현했습니다.<br/>
-또한, **High-Associativity** 환경에서 `LRU`, `Random`, `MRU` 정책 간의 성능 트레이드오프(Trade-off)를 `gcc`, `mcf` 벤치마크를 통해 정량적으로 분석했습니다.
+본 프로젝트는 컴퓨터 구조 학습 목적으로 **SimpleScalar 3.0** 시뮬레이터의 소스 코드를 분석하고 수정하여 기존에 지원하지 않던 **MRU(Most Recently Used)** 페이지 교체 정책을 추가 구현했습니다.<br/>
+또한 **High-Associativity** 환경에서 `LRU`, `Random`, `MRU` 정책 간의 성능 트레이드오프(Trade-off)를 `gcc`, `mcf` 벤치마크를 통해 정량적으로 분석했습니다.
 
 * **Simulator:** SimpleScalar 3.0 Toolset
 * **Language:** C (Legacy Code)
 * **Environment:** Linux (Ubuntu 22.04 on VirtualBox) w/ GCC 3.4
 
 ## 📂 Repository Contents
-SimpleScalar의 전체 소스 코드는 저작권 및 용량 문제로 포함하지 않았으며, 제가 직접 **로직을 수정하고 구현한 핵심 파일**만 업로드하였습니다.
+SimpleScalar의 전체 소스 코드는 저작권 및 용량 문제로 포함하지 않았으며 제가 직접 **로직을 수정하고 구현한 핵심 파일**만 업로드하였습니다.
 
 * **`src/cache.c`**: 캐시 접근(`cache_access`) 및 교체 정책(Switch-Case) 로직 구현 (**핵심**)
 * **`src/cache.h`**: 캐시 블록/세트 구조체 및 정책 Enum 정의
@@ -19,7 +19,7 @@ SimpleScalar의 전체 소스 코드는 저작권 및 용량 문제로 포함하
 ## 🛠️ Implementation Details
 ### 1. 트러블 슈팅: 레거시 환경 구축
 SimpleScalar 3.0은 구버전 C 문법으로 작성되어 최신 GCC에서 컴파일 에러가 발생했습니다.
-* **Solution:** `sudo apt-get install gcc-3.4`를 통해 구버전 컴파일러 환경을 구축하고, `make config-alpha`를 통해 Alpha 아키텍처 타겟으로 빌드를 성공시켰습니다.
+* **Solution:** `sudo apt-get install gcc-3.4`를 통해 구버전 컴파일러 환경을 구축하고 `make config-alpha`를 통해 Alpha 아키텍처 타겟으로 빌드를 성공시켰습니다.
 
 ### 2. MRU (Most Recently Used) 알고리즘 구현
 기존 `cache.c`의 `cache_access` 함수 내 `switch` 문에 **MRU 로직**을 추가했습니다.
@@ -71,6 +71,21 @@ switch (cp->policy) {
 
 ## 📊 Key Results (Summary)
 
-* **MRU 성능:** 지역성이 높은 프로그램에서는 성능이 저하되었으나, 이를 통해 역설적으로 **캐시에서의 지역성(Locality) 유지의 중요성**을 입증했습니다.
-* **Random vs LRU:** 16KB의 제한된 용량에서는 복잡한 `LRU`와 단순한 `Random` 정책 간의 미스율 차이가 0.2% 내외로 미미했습니다. 이를 통해 하드웨어 복잡도를 고려할 때 **Random 정책의 가성비**가 유효함을 확인했습니다.
+### 1. **MRU 성능:**
+지역성이 높은 프로그램에서는 성능이 저하되었으나 이를 통해 역설적으로 **캐시에서의 지역성(Locality) 유지의 중요성**을 입증했습니다.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/988cd348-84e1-49dc-a89c-afc9ca18cb78" alt="IPC comparison graph" width="40%">
+  <br>
+  <sub><b>MCF, GCC 벤치마크 환경에서의 MRU 성능 비교</b></sub>
+</p>  
+
+### 2. **Random vs LRU:**
+16KB의 제한된 용량에서는 복잡한 `LRU`와 단순한 `Random` 정책 간의 미스율 차이가 0.2% 내외로 미미했습니다. 이를 통해 하드웨어 복잡도를 고려할 때 **Random 정책의 가성비**가 유효함을 확인했습니다.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/66f3a3f9-2286-4acc-8b15-51d89da3696d" alt="IPC comparison graph" width="80%">
+  <br>
+  <sub><b>GCC 벤치마크 환경에서의 정책별 성능 비교</b></sub>
+</p>  
 
